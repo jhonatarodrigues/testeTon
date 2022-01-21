@@ -1,6 +1,24 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "allowJs": true,
+
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "target": "esnext",
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": [
+        "*"
+      ]
+    },
+  },
+ 
 }
