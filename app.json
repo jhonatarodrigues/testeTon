@@ -1,0 +1,12 @@
+{
+  "name": "testeTon",
+  "displayName": "testeTon",
+  "expo": {
+    "name": "testeTon",
+    "slug": "testeTon",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
