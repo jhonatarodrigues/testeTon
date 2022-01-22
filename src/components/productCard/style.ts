@@ -3,7 +3,7 @@ import { moderateScale } from 'react-native-size-matters';
 
 import { color, Text } from '~/configs/theme';
 
-export const Card = styled.ScrollView`
+export const Card = styled.View`
   width: 100%;
   background-color: ${color.white};
   border: 1px solid ${color.greyLight};
