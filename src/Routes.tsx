@@ -1,11 +1,8 @@
-import React, { useCallback } from 'react';
-import { TouchableOpacity } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import { color } from '~/configs/theme';
+import HeaderIconCart from './components/headerIconCart';
 import Language from '~/language';
 
 // -- pages
@@ -15,17 +12,6 @@ import Cart from './pages/cart';
 function Routes() {
   const Stack = createStackNavigator();
 
-  const cartIcon = useCallback((navigation) => {
-    return (
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Cart')}
-        style={{ marginRight: 10 }}
-      >
-        <FontAwesomeIcon icon={faShoppingCart} size={25} color={color.grey} />
-      </TouchableOpacity>
-    );
-  }, []);
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -34,7 +20,9 @@ function Routes() {
           component={ListProducts}
           options={({ navigation }) => ({
             title: Language.header.title.listProducts,
-            headerRight: () => cartIcon(navigation),
+            headerRight: () => (
+              <HeaderIconCart onPressIcon={() => navigation.navigate('Cart')} />
+            ),
           })}
         />
         <Stack.Screen

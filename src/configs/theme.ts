@@ -11,6 +11,7 @@ export const color = {
   black: '#000000',
   greyLight: '#b7b7b7',
   grey: '#505050',
+  red: '#f00',
 }
 
 export const Text = styled.Text`
