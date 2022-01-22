@@ -1,38 +1,13 @@
 import React, { useCallback } from 'react';
 
+import { IProducts } from '~/@types/api/Products';
+import { getProducts } from '~/hooks/useProducts';
 import Content from '~/components/content';
 import ProductCard from '~/components/productCard';
 import { FlatList, ContentProduct } from './style';
 
 export default function ListProducts() {
-  const DATA = [
-    {
-      id: '1',
-      title: 'First Item',
-      image: 'https://reactnative.dev/img/tiny_logo.png',
-      description:
-        'description description description description description description ',
-    },
-    {
-      id: '2',
-      title: 'Second Item',
-      image: 'https://reactnative.dev/img/tiny_logo.png',
-      description: 'description 2 ',
-    },
-    {
-      id: '3',
-      title: 'Third Item',
-      image: 'https://reactnative.dev/img/tiny_logo.png',
-      description: 'description 3 ',
-    },
-    {
-      id: '4',
-      title: 'Third Item',
-      image: 'https://reactnative.dev/img/tiny_logo.png',
-      description: 'description 4 ',
-    },
-  ];
-
+  const products: IProducts[] = getProducts();
   const renderItem = useCallback(({ item, index }) => {
     return (
       <ContentProduct second={index % 2 ? true : false}>
@@ -48,7 +23,7 @@ export default function ListProducts() {
   return (
     <Content>
       <FlatList
-        data={DATA}
+        data={products}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         numColumns={2}
