@@ -15,5 +15,6 @@ export const ptBr = {
 
   cart: {
     numberProducts: 'produtos adicionados:',
+    notFound: 'Nenhum produto adicionado',
   }
 }

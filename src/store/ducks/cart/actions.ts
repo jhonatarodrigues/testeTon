@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions';
 import { CartTypes, ICart } from './types';
 
-export const loadRequest = () => action(CartTypes.LOAD_REQUEST);
-export const loadSuccess = (data: ICart) => action(CartTypes.LOAD_SUCCESS, { ...data });
+export const add = (data: ICart) => action(CartTypes.ADD, { ...data });
+export const remove = (id: string) => action(CartTypes.REMOVE, { id });
 

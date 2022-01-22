@@ -19,9 +19,16 @@ interface IProps {
   description: string;
   image: string;
   unity: number;
+  onPressRemove: () => void;
 }
 
-export default function ItemCart({ title, description, image, unity }: IProps) {
+export default function ItemCart({
+  title,
+  description,
+  image,
+  unity,
+  onPressRemove,
+}: IProps) {
   return (
     <ContentItem>
       <Image source={{ uri: image }} />
@@ -34,7 +41,7 @@ export default function ItemCart({ title, description, image, unity }: IProps) {
             : `${unity} ${Language.components.itemCart.unity}`}
         </Unity>
       </ContentInfo>
-      <ButtonRemove>
+      <ButtonRemove onPress={() => onPressRemove()}>
         <FontAwesomeIcon icon={faTimes} size={16} color={color.white} />
       </ButtonRemove>
     </ContentItem>

@@ -4,7 +4,6 @@ import { moderateScale } from 'react-native-size-matters';
 import { color, Text } from '~/configs/theme';
 
 export const ContentItem = styled.View`
-  flex: 1;
   width: 100%;
   background-color: ${color.white};
   border-bottom-width: 1;
