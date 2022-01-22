@@ -8,6 +8,7 @@ export const NumberProducts = styled(Text)`
   font-size: ${scale(18)};
   font-weight: bold;
   margin-top: ${scale(15)};
+  margin-bottom: ${scale(30)};
 `;
 
 export const FlatList = styled.FlatList``;

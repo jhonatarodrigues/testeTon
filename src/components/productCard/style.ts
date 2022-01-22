@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { moderateScale } from 'react-native-size-matters';
+import { moderateScale, moderateVerticalScale } from 'react-native-size-matters';
 
 import { color, Text } from '~/configs/theme';
 
@@ -27,6 +27,7 @@ export const Title = styled(Text)`
 `;
 export const Description = styled.Text`
   width: 100%;
+  height: ${moderateVerticalScale(40)}px;
   font-size: ${moderateScale(14)}px;
   color: ${color.grey};
   margin-bottom: ${moderateScale(10)}px;
