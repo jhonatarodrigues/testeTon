@@ -1,14 +1,14 @@
 import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 
-import { color } from '~/configs/theme';
-
-export const ProductList = styled.ScrollView`
-  flex: 1;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  background: #00f;
-`;
+interface IContentProduct {
+  second: boolean;
+}
 
 export const FlatList = styled.FlatList``;
+
+export const ContentProduct = styled.View<IContentProduct>`
+  flex: 1;
+  padding-left: ${(props) => (props.second ? moderateScale(3) : 0 )}px;
+  padding-right: ${(props) => (props.second ?  0 : moderateScale(3) )}px;
+`;

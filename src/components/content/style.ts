@@ -7,5 +7,5 @@ export const Container = styled.ScrollView`
   flex: 1;
   width: 100%;
   background-color: ${color.white};
-  padding-horizontal: ${moderateScale(20)}px;
+  padding-horizontal: ${moderateScale(15)}px;
 `;

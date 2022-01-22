@@ -11,11 +11,9 @@ interface ILabel {
 }
 
 export const Touch = styled.TouchableOpacity`
-  flex: 1;
   width: 100%;
 `;
 export const ContentButton = styled.View<IContentButton>`
-  flex: 1;
   background: ${(props) => props.backgroundColor};
   padding-horizontal: ${moderateScale(20)}px;
   padding-vertical: ${moderateScale(10)}px;

@@ -1,23 +1,33 @@
 import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 
-import { color } from '~/configs/theme';
+import { color, Text } from '~/configs/theme';
 
 export const Card = styled.ScrollView`
-  flex: 1;
   width: 100%;
   background-color: ${color.white};
-  padding-horizontal: ${moderateScale(20)}px;
-  border: 1px solid;
+  border: 1px solid ${color.greyLight};
+  border-radius: ${moderateScale(10)}px;
+  overflow: hidden;
+  padding-bottom: ${moderateScale(15)}px;
 `;
-
-export const Title = styled.Text`
+export const ContentCard = styled.View`
+  padding-horizontal: ${moderateScale(15)}px;
+`;
+export const Image = styled.Image`
   width: 100%;
-  font-size: ${moderateScale(20)}px;
-  color: #f00;
+  height: ${moderateScale(150)}px;
+  margin-bottom: ${moderateScale(10)}px;
+`;
+export const Title = styled(Text)`
+  width: 100%;
+  font-size: ${moderateScale(16)}px;
+  color: ${color.grey};
+  font-weight: bold;
 `;
 export const Description = styled.Text`
   width: 100%;
   font-size: ${moderateScale(14)}px;
-  color: #ff0;
+  color: ${color.grey};
+  margin-bottom: ${moderateScale(10)}px;
 `;
