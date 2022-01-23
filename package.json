@@ -7,7 +7,9 @@
     "start": "react-native start",
     "test": "jest",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "test:android": "yarn detox test -c android.emu.debug",
+    "test:android:build": "yarn detox build -c android.emu.debug"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -48,6 +50,7 @@
     "@babel/core": "^7.9.0",
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
+    "@types/jest": "^27.4.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
     "@types/redux-logger": "^3.0.9",
@@ -58,6 +61,7 @@
     "babel-preset-expo": "~8.3.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "3.3.0",
+    "detox": "^19.4.2",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "^8.3.0",
@@ -67,11 +71,16 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
+    "jest": "27.4.5",
+    "jest-circus": "26.0.0",
     "jest-expo": "~41.0.0",
     "prettier": "^2.5.1",
     "reactotron-react-native": "^5.0.1",
     "reactotron-redux": "^3.1.3",
     "redux-logger": "^3.0.6",
+    "sanitize-filename": "^1.6.3",
+    "ts-jest": "26",
+    "tslib": "^2.3.1",
     "typescript": "~4.0.0"
   },
   "jest": {
