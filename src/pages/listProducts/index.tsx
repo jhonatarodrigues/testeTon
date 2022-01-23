@@ -7,12 +7,13 @@ import Content from '~/components/content';
 import ProductCard from '~/components/productCard';
 import { CartTypes } from '~/store/ducks/cart/types';
 import Modal, { IModal } from '~/components/modal';
+import Language from '~/language';
 import { FlatList, ContentProduct } from './style';
 
 export default function ListProducts() {
   const dispatch = useDispatch();
   const products: IProducts[] = getProducts();
-  const [modal, setModal] = useState<IModal>({});
+  const [modal, setModal] = useState<IModal>();
 
   const addProducts = useCallback(
     (item) => {
@@ -24,11 +25,11 @@ export default function ListProducts() {
         },
       });
       setModal({
-        text: 'Produto adicionado com sucesso!',
+        text: Language.listProducts.modalSuccess,
         type: 'success',
         visible: true,
-        labelButton: 'Fechar',
-        onPress: () => setModal({}),
+        labelButton: Language.components.modal.buttonClose,
+        onPress: () => setModal(undefined),
       });
     },
     [dispatch],
@@ -56,13 +57,8 @@ export default function ListProducts() {
         numColumns={2}
         columnWrapperStyle={{ marginTop: 10 }}
       />
-      <Modal
-        text={modal.text}
-        type={modal.type}
-        labelButton={modal.labelButton}
-        visible={modal.visible}
-        onPress={modal.onPress}
-      />
+
+      {modal && <Modal {...modal} />}
     </Content>
   );
 }
