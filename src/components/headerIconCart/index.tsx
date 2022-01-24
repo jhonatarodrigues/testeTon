@@ -15,7 +15,7 @@ export default function HeaderIconCart({ onPressIcon }: IProps) {
   const { cart } = useSelector((state: ApplicationState) => state);
 
   return (
-    <Touch onPress={() => onPressIcon()}>
+    <Touch onPress={() => onPressIcon()} testID="iconCartHeader">
       <Notify>{cart.products.length}</Notify>
       <FontAwesomeIcon icon={faShoppingCart} size={25} color={color.grey} />
     </Touch>

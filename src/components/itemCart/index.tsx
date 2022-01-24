@@ -19,6 +19,7 @@ interface IProps {
   description: string;
   image: string;
   unity: number;
+  index?: number;
   onPressRemove: () => void;
 }
 
@@ -27,6 +28,7 @@ export default function ItemCart({
   description,
   image,
   unity,
+  index = 0,
   onPressRemove,
 }: IProps) {
   return (
@@ -41,7 +43,7 @@ export default function ItemCart({
             : `${unity} ${Language.components.itemCart.unity}`}
         </Unity>
       </ContentInfo>
-      <ButtonRemove onPress={() => onPressRemove()}>
+      <ButtonRemove onPress={() => onPressRemove()} testID={`itemCart${index}`}>
         <FontAwesomeIcon icon={faTimes} size={16} color={color.white} />
       </ButtonRemove>
     </ContentItem>

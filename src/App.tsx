@@ -7,6 +7,8 @@ import Routes from '~/Routes';
 import '~/configs/reactotronConfig';
 
 export default function App() {
+  console.disableYellowBox = true;
+
   return (
     <Provider store={Store}>
       <PersistGate loading={null} persistor={persistor}>

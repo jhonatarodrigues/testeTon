@@ -15,13 +15,14 @@ export default function Cart() {
   const { cart } = useSelector((state: ApplicationState) => state);
 
   const renderItem = useCallback(
-    ({ item }) => {
+    ({ item, index }) => {
       return (
         <ItemCart
           title={item.title}
           description={item.description}
           image={item.image}
           unity={item.quantity}
+          index={index}
           onPressRemove={() => {
             dispatch({ type: CartTypes.REMOVE, payload: item.id });
             setModal({

@@ -49,6 +49,7 @@ export default function Modal({
               label={labelButton}
               labelColor={color.white}
               onPress={() => onPress()}
+              testID={`modal-${type}-button`}
             />
           </ContentButton>
         </Box>
