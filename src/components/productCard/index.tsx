@@ -8,6 +8,7 @@ interface IProps {
   title: string;
   description: string;
   image: string;
+  index?: number;
 
   buttonAddCartOnPress?: () => void;
 }
@@ -16,6 +17,7 @@ export default function ProductCard({
   title,
   description,
   image,
+  index,
   buttonAddCartOnPress,
 }: IProps) {
   return (
@@ -34,6 +36,7 @@ export default function ProductCard({
           labelColor={color.black}
           label="Adicionar ao carrinho"
           onPress={buttonAddCartOnPress}
+          testID={`buttonModalAddCart${index}`}
         />
       </ContentCard>
     </Card>

@@ -39,7 +39,7 @@ export default function Modal({
 
   return (
     <ModalContent animationType="slide" transparent={true} visible={visible}>
-      <Lente>
+      <Lente testID={`modal-${type}`}>
         <Box>
           <TextBox>{text}</TextBox>
           {renderIcon()}

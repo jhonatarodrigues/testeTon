@@ -43,6 +43,7 @@ export default function ListProducts() {
           description={item.description}
           image={item.image}
           buttonAddCartOnPress={() => addProducts(item)}
+          index={index}
         />
       </ContentProduct>
     );
