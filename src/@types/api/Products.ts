@@ -5,3 +5,8 @@ export interface IProducts {
   description: string;
   price: number;
 }
+
+export interface IProductsState {
+  products: IProducts[];
+  loading: boolean;
+}

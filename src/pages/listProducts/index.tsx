@@ -1,18 +1,19 @@
 import React, { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { IProducts } from '~/@types/api/Products';
+import { IProductsState } from '~/@types/api/Products';
 import { getProducts } from '~/hooks/useProducts';
 import Content from '~/components/content';
 import ProductCard from '~/components/productCard';
 import { CartTypes } from '~/store/ducks/cart/types';
 import Modal, { IModal } from '~/components/modal';
+import Loading from '~/components/loading';
 import Language from '~/language';
 import { FlatList, ContentProduct } from './style';
 
 export default function ListProducts() {
   const dispatch = useDispatch();
-  const products: IProducts[] = getProducts();
+  const { products, loading }: IProductsState = getProducts();
   const [modal, setModal] = useState<IModal>();
 
   const addProducts = useCallback(
@@ -48,6 +49,10 @@ export default function ListProducts() {
       </ContentProduct>
     );
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <Content>
