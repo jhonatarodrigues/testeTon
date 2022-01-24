@@ -6,7 +6,6 @@
     "jsx": "react",
     "typeRoots": ["./src/@types", "./node_modules/@types"],
     "allowJs": true,
-
     "esModuleInterop": true,
     "isolatedModules": true,
     "lib": ["es2017"],
@@ -20,8 +19,5 @@
       ]
     },
   },
-  "include": [
-       "e2e/**/*.ts",
-  ]
  
 }
