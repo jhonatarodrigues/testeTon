@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import HeaderIconCart from './components/headerIconCart';
 import Language from '~/language';
@@ -10,12 +10,12 @@ import ListProducts from './pages/listProducts';
 import Cart from './pages/cart';
 
 function Routes() {
-  const Stack = createStackNavigator();
+  const Drawer = createDrawerNavigator();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen
           name="ListProducts"
           component={ListProducts}
           options={({ navigation }) => ({
@@ -25,12 +25,12 @@ function Routes() {
             ),
           })}
         />
-        <Stack.Screen
+        <Drawer.Screen
           name="Cart"
           component={Cart}
           options={{ title: Language.header.title.cart }}
         />
-      </Stack.Navigator>
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
